@@ -1,0 +1,71 @@
+{
+  "key-rack": {
+    "thumbnail": "/placeholders/rhino.svg",
+    "images": [
+      "/hires/key_rack/key_rack_01.jpg",
+      "/hires/key_rack/key_rack_02.jpg",
+      "/hires/key_rack/key_rack_03.jpg"
+    ]
+  },
+  "sideboard-night": {
+    "thumbnail": "/placeholders/bim.svg",
+    "images": [
+      "/hires/sideboard/Sideboard by Night.jpg"
+    ]
+  },
+  "sideboard-dev": {
+    "thumbnail": "/placeholders/bim.svg",
+    "images": [
+      "/hires/sideboard/Sideboard dev 2.jpg",
+      "/hires/sideboard/Sideboard dev.JPG",
+      "/hires/sideboard_2/Sideboard.png"
+    ]
+  },
+  "wine-shelf": {
+    "thumbnail": "/placeholders/bim.svg",
+    "images": [
+      "/hires/winerack/Weingestell_2.jpg",
+      "/hires/winerack/Weingestell SW.png"
+    ]
+  },
+  "wavy-shelf-right": {
+    "thumbnail": "/placeholders/bim.svg",
+    "images": [
+      "/hires/wave_shelf/waveshelf_main.jpg",
+      "/hires/wave_shelf/waveshelf_01.jpg",
+      "/hires/wave_shelf/waveshelf_02.jpg",
+      "/hires/wave_shelf/waveshelf_03.jpg",
+      "/hires/wave_shelf/waveshelf_04.jpg"
+    ]
+  },
+  "curved-light": {
+    "thumbnail": "/placeholders/bim.svg",
+    "images": [
+      "/hires/curved_light/Curved Light 2Pic.jpg",
+      "/hires/curved_light/IMG_20180315_194247.jpg",
+      "/hires/curved_light/IMG_20180315_194304.jpg",
+      "/hires/curved_light/IMG_20180316_185914.jpg",
+      "/hires/curved_light/IMG_20180316_185925.jpg",
+      "/hires/curved_light/IMG_20180319_195359.jpg"
+    ]
+  },
+  "table": {
+    "thumbnail": "/placeholders/bim.svg",
+    "images": [
+      "/hires/table/Tisch2.jpg"
+    ]
+  },
+  "cabinet": {
+    "thumbnail": "/placeholders/bim.svg",
+    "images": [
+      "/hires/vitrine/Vitrine_1.jpg"
+    ]
+  },
+  "kitchen-mixed": {
+    "thumbnail": "/placeholders/bim.svg",
+    "images": [
+      "/hires/kitchen/Render_Küche_Real_Skizze_mix.png",
+      "/hires/kitchen/Render_Küche_Skizze.png"
+    ]
+  }
+}
