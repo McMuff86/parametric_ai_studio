@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "sideboard-night",
+    "title": "Sideboard by Night",
+    "image": "./assets/Sideboard by Night.jpg",
+    "alt": "Sideboard by Night",
+    "caption": "Sideboard by Night — Möbel/Parametrik",
+    "meta": [
+      { "label": "Material", "value": "Holz, Metall" },
+      { "label": "Finish", "value": "Matt, geölt" },
+      { "label": "Dimensions", "value": "1800×450×600 mm" }
+    ]
+  },
+  {
+    "slug": "sideboard-dev",
+    "title": "Sideboard Entwicklung",
+    "image": "./assets/Sideboard dev 2.jpg",
+    "alt": "Sideboard development",
+    "caption": "Sideboard Entwicklung — Iterationen",
+    "meta": [
+      { "label": "Workflow", "value": "Parametrik, Varianten" },
+      { "label": "Iterations", "value": "v1–v6" }
+    ]
+  },
+  {
+    "slug": "wine-shelf",
+    "title": "Weingestell",
+    "image": "./assets/Weingestell_2.jpg",
+    "alt": "Wine shelf",
+    "caption": "Weingestell — CNC & Holz",
+    "meta": [
+      { "label": "Material", "value": "Eiche" },
+      { "label": "Fertigung", "value": "CNC gefräst" },
+      { "label": "Kapazität", "value": "48 Flaschen" }
+    ]
+  },
+  {
+    "slug": "wavy-shelf-right",
+    "title": "Wellenregal (rechts)",
+    "image": "./assets/Wellenregal von rechts.jpg",
+    "alt": "Wavy shelf right",
+    "caption": "Wellenregal — Geometrie & Fertigung",
+    "meta": [
+      { "label": "Material", "value": "Multiplex" },
+      { "label": "Oberfläche", "value": "Klarlack, matt" }
+    ]
+  },
+  {
+    "slug": "curved-light",
+    "title": "Curved Light",
+    "image": "./assets/Curved Light 2Pic.jpg",
+    "alt": "Curved Light",
+    "caption": "Curved Light — Konzept & Fertigung",
+    "meta": [
+      { "label": "Material", "value": "Aluminium, Acryl" },
+      { "label": "Oberfläche", "value": "Pulverbeschichtet, RAL 9005" },
+      { "label": "Dimensions", "value": "1200×300×60 mm" }
+    ]
+  },
+  {
+    "slug": "table",
+    "title": "Tisch",
+    "image": "./assets/Tisch2.jpg",
+    "alt": "Table",
+    "caption": "Tisch — Holz & Verbindung",
+    "meta": [
+      { "label": "Material", "value": "Massivholz" },
+      { "label": "Verbindung", "value": "Schwalbenschwanz, Dübel" }
+    ]
+  },
+  {
+    "slug": "cabinet",
+    "title": "Vitrine",
+    "image": "./assets/Vitrine_1.jpg",
+    "alt": "Cabinet",
+    "caption": "Vitrine — Detaillösungen",
+    "meta": [
+      { "label": "Glas", "value": "ESG, 6 mm" },
+      { "label": "Beschläge", "value": "verdeckte Scharniere" }
+    ]
+  },
+  {
+    "slug": "key-rack",
+    "title": "Key Rack",
+    "image": "./assets/key_rack/key_rack_be_cncmachined_hd_1920x1440.png",
+    "fullImage": "./assets/hires/key_rack_be_cncmachined_hq.jpg",
+    "alt": "Key Rack CNC-machined",
+    "caption": "Key Rack — CNC-gefräst",
+    "meta": [
+      { "label": "Material", "value": "Aluminium" },
+      { "label": "Oberfläche", "value": "Powdercoated, NCS S5000-S30" },
+      { "label": "Dimensions", "value": "1000×500×120 mm" }
+    ]
+  },
+  {
+    "slug": "kitchen-mixed",
+    "title": "Küche — Konzept zu Real",
+    "image": "./assets/Render_Küche_Real_Skizze_mix.png",
+    "alt": "Kitchen mixed render",
+    "caption": "Küche — Konzept zu Real",
+    "meta": [
+      { "label": "Workflow", "value": "Konzept → Parametrik → Fertigung" }
+    ]
+  }
+]
+
+

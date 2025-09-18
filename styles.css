@@ -1,0 +1,33 @@
+/* Motion utilities (moved from inline styles) */
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:animate-fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 280ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* Dark design baseline */
+:root {
+  color-scheme: dark;
+}
+
+/* Improve image rendering on dark bg */
+img { display: block; }
+
+

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parametric AI Studio – Digital Fabrication & Computational Workflows</title>
+    <meta name="description" content="Rhino, Parametrik, BIM, CNC – durchgängige digitale Pipeline von Entwurf bis Fertigung." />
+    <link rel="preload" href="./pai-logo-simple-hub.svg" as="image" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-neutral-950 text-neutral-50 antialiased">
+    <a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:p-2 focus:bg-white focus:ring-2 focus:ring-sky-500" href="#main">Zum Inhalt springen</a>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-neutral-950/70 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60 border-b border-neutral-800">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="./pai-logo-simple-hub.svg" alt="Parametric AI Studio Logo" width="28" height="28" class="inline-block" />
+          <span class="font-semibold tracking-tight">Parametric AI Studio</span>
+        </div>
+        <nav aria-label="Hauptnavigation" class="hidden md:flex items-center gap-8 text-sm text-neutral-300">
+          <a class="hover:text-white hover:underline underline-offset-4 decoration-2" href="#services">Services</a>
+          <a class="hover:text-white hover:underline underline-offset-4 decoration-2" href="#cases">Projects</a>
+          <a class="hover:text-white hover:underline underline-offset-4 decoration-2" href="#philosophy">Philosophy</a>
+          <a class="hover:text-white hover:underline underline-offset-4 decoration-2" href="#about">About</a>
+          <a class="hover:text-white hover:underline underline-offset-4 decoration-2" href="#contact">Contact</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-md border border-neutral-800 hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-sky-500" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menü öffnen">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800" role="dialog" aria-modal="true">
+        <div class="px-4 py-3 flex flex-col gap-3 text-sm text-neutral-300">
+          <a class="py-2 hover:text-white" href="#services">Services</a>
+          <a class="py-2 hover:text-white" href="#cases">Projects</a>
+          <a class="py-2 hover:text-white" href="#philosophy">Philosophy</a>
+          <a class="py-2 hover:text-white" href="#about">About</a>
+          <a class="py-2 hover:text-white" href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="relative overflow-hidden">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-10 lg:pt-24 lg:pb-16">
+          <div class="max-w-3xl motion-safe:animate-fade-in">
+            <h1 class="text-4xl sm:text-6xl font-semibold tracking-tight leading-tight">Digital Fabrication & Computational Workflows</h1>
+            <p class="mt-5 text-neutral-300 text-lg">Planung, Konstruktion und Fertigung gehören in eine digitale, offene und nahtlose Pipeline. Mit Rhino, Parametrik und AI schaffen wir Effizienz, Präzision und Nachvollziehbarkeit.</p>
+            <div class="mt-8 flex gap-3">
+              <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-white text-neutral-900 px-5 py-2.5 text-sm font-medium hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-white">Projekt anfragen</a>
+              <a href="#cases" class="inline-flex items-center justify-center rounded-md border border-neutral-800 text-neutral-100 px-5 py-2.5 text-sm font-medium hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-sky-500">Showcase ansehen</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="border-t border-neutral-800">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+          <header class="max-w-3xl motion-safe:animate-fade-in">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Services</h2>
+            <p class="mt-2 text-neutral-300">Parametrische Modelle, automatisierte Produktionsdaten, BIM-Workflows, Custom-Tools und Beratung.</p>
+          </header>
+          <div id="showcaseGrid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article class="group rounded-xl border border-neutral-800 p-6 bg-neutral-900 shadow-sm/5 hover:shadow transition-shadow">
+              <div class="text-sm font-medium text-neutral-400">Parametrische Modelle</div>
+              <h3 class="mt-1 font-semibold text-white">Möbel · Türen · Fronten · Fense · Fassaden</h3>
+              <a class="mt-4 inline-flex items-center gap-1 text-sm text-neutral-200 group-hover:underline underline-offset-4" href="#cases">Mehr →</a>
+            </article>
+            <article class="group rounded-xl border border-neutral-800 p-6 bg-neutral-900 shadow-sm/5 hover:shadow transition-shadow">
+              <div class="text-sm font-medium text-neutral-400">Produktionsdaten</div>
+              <h3 class="mt-1 font-semibold text-white">CAD/CAM · CNC · Rest-API · Modulare Software)</h3>
+              <a class="mt-4 inline-flex items-center gap-1 text-sm text-neutral-200 group-hover:underline underline-offset-4" href="#cases">Mehr →</a>
+            </article>
+            <article class="group rounded-xl border border-neutral-800 p-6 bg-neutral-900 shadow-sm/5 hover:shadow transition-shadow">
+              <div class="text-sm font-medium text-neutral-400">BIM & Zwillinge</div>
+              <h3 class="mt-1 font-semibold text-white">BIM-Workflows · Digitale Zwillinge</h3>
+              <a class="mt-4 inline-flex items-center gap-1 text-sm text-neutral-200 group-hover:underline underline-offset-4" href="#cases">Mehr →</a>
+            </article>
+            <article class="group rounded-xl border border-neutral-800 p-6 bg-neutral-900 shadow-sm/5 hover:shadow transition-shadow">
+              <div class="text-sm font-medium text-neutral-400">Custom-Tools</div>
+              <h3 class="mt-1 font-semibold text-white">Rhino/Grasshopper Plugins</h3>
+              <a class="mt-4 inline-flex items-center gap-1 text-sm text-neutral-200 group-hover:underline underline-offset-4" href="#cases">Mehr →</a>
+            </article>
+            <article class="group rounded-xl border border-neutral-800 p-6 bg-neutral-900 shadow-sm/5 hover:shadow transition-shadow">
+              <div class="text-sm font-medium text-neutral-400">Beratung</div>
+              <h3 class="mt-1 font-semibold text-white">AI-gestützte Prozesse · Optimierung · Digitalisierung</h3>
+              <a class="mt-4 inline-flex items-center gap-1 text-sm text-neutral-200 group-hover:underline underline-offset-4" href="#cases">Mehr →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cases / Showcase -->
+      <section id="cases" class="border-t border-neutral-800 bg-neutral-950">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+          <header class="max-w-3xl motion-safe:animate-fade-in">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Showcase</h2>
+            <p class="mt-2 text-neutral-300">Ausgewählte Projekte und Studien. Bilder sind responsiv und performant eingebunden.</p>
+          </header>
+          <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Use available assets (preferring jpg/png over raw/tif/dng) -->
+            <a class="group block overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900" href="./project.html?slug=sideboard-night" target="_blank" rel="noopener">
+              <img src="./assets/Sideboard%20by%20Night.jpg" alt="Sideboard by Night" class="w-full aspect-[16/9] object-cover transition-transform duration-200 group-hover:scale-[1.03]" loading="lazy" />
+              <div class="p-3 text-sm text-neutral-300">Sideboard by Night — Möbel/Parametrik</div>
+            </a>
+            <a class="group block overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900" href="./project.html?slug=sideboard-dev" target="_blank" rel="noopener">
+              <img src="./assets/Sideboard%20dev%202.jpg" alt="Sideboard development" class="w-full aspect-[16/9] object-cover transition-transform duration-200 group-hover:scale-[1.03]" loading="lazy" />
+              <div class="p-3 text-sm text-neutral-300">Sideboard Entwicklung — Iterationen</div>
+            </a>
+            <a class="group block overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900" href="./project.html?slug=wine-shelf" target="_blank" rel="noopener">
+              <img src="./assets/Weingestell_2.jpg" alt="Wine shelf" class="w-full aspect-[16/9] object-cover transition-transform duration-200 group-hover:scale-[1.03]" loading="lazy" />
+              <div class="p-3 text-sm text-neutral-300">Weingestell — CNC & Holz</div>
+            </a>
+            <a class="group block overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900" href="./project.html?slug=wavy-shelf-right" target="_blank" rel="noopener">
+              <img src="./assets/Wellenregal%20von%20rechts.jpg" alt="Wavy shelf right" class="w-full aspect-[16/9] object-cover transition-transform duration-200 group-hover:scale-[1.03]" loading="lazy" />
+              <div class="p-3 text-sm text-neutral-300">Wellenregal — Geometrie & Fertigung</div>
+            </a>
+            <a class="group block overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900" href="./project.html?slug=curved-light" target="_blank" rel="noopener">
+              <img src="./assets/Curved%20Light%202Pic.jpg" alt="Curved Light" class="w-full aspect-[16/9] object-cover transition-transform duration-200 group-hover:scale-[1.03]" loading="lazy" />
+              <div class="p-3 text-sm text-neutral-300">Curved Light — Konzept & Fertigung</div>
+            </a>
+            <a class="group block overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900" href="./project.html?slug=table" target="_blank" rel="noopener">
+              <img src="./assets/Tisch2.jpg" alt="Table" class="w-full aspect-[16/9] object-cover transition-transform duration-200 group-hover:scale-[1.03]" loading="lazy" />
+              <div class="p-3 text-sm text-neutral-300">Tisch — Holz & Verbindung</div>
+            </a>
+            <a class="group block overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900" href="./project.html?slug=cabinet" target="_blank" rel="noopener">
+              <img src="./assets/Vitrine_1.jpg" alt="Cabinet" class="w-full aspect-[16/9] object-cover transition-transform duration-200 group-hover:scale-[1.03]" loading="lazy" />
+              <div class="p-3 text-sm text-neutral-300">Vitrine — Detaillösungen</div>
+            </a>
+            <a class="group block overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900" href="./project.html?slug=key-rack" target="_blank" rel="noopener">
+              <img src="./assets/key_rack/key_rack_be_cncmachined_hd_1920x1440.png" alt="Key Rack CNC-gefräst" class="w-full aspect-[16/9] object-cover transition-transform duration-200 group-hover:scale-[1.03]" loading="lazy" />
+              <div class="p-3 text-sm text-neutral-300">Key Rack — CNC-gefräst</div>
+            </a>
+            <a class="group block overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900" href="./project.html?slug=kitchen-mixed" target="_blank" rel="noopener">
+              <img src="./assets/Render_K%C3%BCche_Real_Skizze_mix.png" alt="Kitchen mixed render" class="w-full aspect-[16/9] object-cover transition-transform duration-200 group-hover:scale-[1.03]" loading="lazy" />
+              <div class="p-3 text-sm text-neutral-300">Küche — Konzept zu Real</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Philosophy / Approach + KPIs -->
+      <section id="philosophy" class="border-t border-neutral-800">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-2 gap-10 items-start">
+          <div class="motion-safe:animate-fade-in">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Philosophy</h2>
+            <p class="mt-3 text-neutral-300 max-w-prose">Offene Schnittstellen, Ende-zu-Ende-Denken und präzise Datenflüsse. Ziel ist eine transparente, robuste Pipeline von Entwurf über Planung bis in die Fertigung.</p>
+          </div>
+          <ol class="space-y-4">
+            <li class="flex gap-3"><span class="font-semibold text-neutral-400">1</span><span class="text-neutral-200">Parametrik als Grundlage für Varianten, Nachvollziehbarkeit und Qualität.</span></li>
+            <li class="flex gap-3"><span class="font-semibold text-neutral-400">2</span><span class="text-neutral-200">Automatisierte Datenübergaben statt manueller Fehler.</span></li>
+            <li class="flex gap-3"><span class="font-semibold text-neutral-400">3</span><span class="text-neutral-200">Offene Standards und APIs gegen Vendor-Lock-in.</span></li>
+            <li class="flex gap-3"><span class="font-semibold text-neutral-400">4</span><span class="text-neutral-200">Fertigung ab Tag eins mitdenken: CNC, BOM, Montage.</span></li>
+            <li class="flex gap-3"><span class="font-semibold text-neutral-400">5</span><span class="text-neutral-200">Messbare KPIs: Durchlaufzeit, Fehlerquote, Rückverfolgbarkeit.</span></li>
+          </ol>
+        </div>
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+          <dl class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm">
+            <div class="rounded-xl border border-neutral-800 p-4 bg-neutral-900"><dt class="text-neutral-400">Durchlaufzeit</dt><dd class="mt-1 text-xl font-semibold text-white">−30%</dd></div>
+            <div class="rounded-xl border border-neutral-800 p-4 bg-neutral-900"><dt class="text-neutral-400">Fehlerquote</dt><dd class="mt-1 text-xl font-semibold text-white">−50%</dd></div>
+            <div class="rounded-xl border border-neutral-800 p-4 bg-neutral-900"><dt class="text-neutral-400">Rückverfolgbarkeit</dt><dd class="mt-1 text-xl font-semibold text-white">100%</dd></div>
+            <div class="rounded-xl border border-neutral-800 p-4 bg-neutral-900"><dt class="text-neutral-400">Schnittstellen</dt><dd class="mt-1 text-xl font-semibold text-white">Offen</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- CTA Band -->
+      <section id="contact" class="border-t border-neutral-800 bg-neutral-900 text-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Lass uns deine digitale Fertigung aufbauen.</h2>
+            <p class="mt-2 text-neutral-300">Mail, Call oder Workshop anfragen – wir finden den effizientesten nächsten Schritt.</p>
+          </div>
+          <div class="flex gap-3">
+            <a href="mailto:adrian@example.com" class="inline-flex items-center justify-center rounded-md bg-white text-neutral-900 px-5 py-2.5 text-sm font-medium hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-white">Mail senden</a>
+            <a href="#" class="inline-flex items-center justify-center rounded-md border border-neutral-700 px-5 py-2.5 text-sm font-medium hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-white">Workshop anfragen</a>
+          </div>
+        </div>
+      </section>
+      
+      <!-- About -->
+      <section id="about" class="border-t border-neutral-800">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-2 gap-10 items-start">
+          <div class="motion-safe:animate-fade-in">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">About</h2>
+            <p class="mt-3 text-neutral-300 max-w-prose">Seit vielen Jahren entwickle und realisiere ich <strong>maßgeschneiderte Lösungen</strong>, die <strong>CAD, CAM, BIM und Fertigung</strong> nahtlos miteinander verbinden. Ich setze <strong>Ideen, Pläne, Standardteile und Spezialanfertigungen</strong> mit modernster digitaler Technologie in die Realität um – von der ersten Skizze bis zum fertigen Produkt.</p>
+            <p class="mt-3 text-neutral-300 max-w-prose">Mein Schwerpunkt liegt in der <strong>CNC-Bearbeitung</strong> und <strong>additiven Fertigung</strong>, ergänzt durch fundiertes Know-how im Umgang mit <strong>Datenformaten</strong>, <strong>Schnittstellen</strong> und <strong>IT-Infrastrukturen</strong>. Darüber hinaus beschäftige ich mich mit <strong>Edge Devices</strong> und <strong>Robotik</strong>, um smarte, vernetzte Fertigungsprozesse zu entwickeln und kontinuierlich zu optimieren.</p>
+            <div class="mt-6">
+              <h3 class="font-semibold">Stärken</h3>
+              <ul class="mt-2 space-y-2 text-neutral-300 text-sm">
+                <li><strong>Parametrisches Denken</strong> – komplexe Geometrien effizient modellieren und steuern</li>
+                <li><strong>Automatisierung</strong> – wiederkehrende Aufgaben eliminieren, Systeme intelligent verknüpfen</li>
+                <li><strong>Technisches Know-how</strong> – CNC, additive Fertigung, Robotik und industrielle IT</li>
+                <li><strong>Datenkompetenz</strong> – passende Formate und Workflows für Planung und Produktion</li>
+                <li><strong>Strategisches Verständnis</strong> – Effizienz, Skalierbarkeit und Zukunftsfähigkeit im Fokus</li>
+                <li><strong>Kommunikation</strong> – Brücke zwischen Architekt:innen, Ingenieur:innen, IT und Produktion</li>
+              </ul>
+            </div>
+            <div class="mt-6">
+              <h3 class="font-semibold">Motivation</h3>
+              <p class="mt-2 text-neutral-300 text-sm max-w-prose">Mein Ziel ist es, das Bau- und Fertigungswesen in eine <strong>digitale, vernetzte und nachhaltige Zukunft</strong> zu führen. Dabei setze ich auf <strong>offene Standards</strong>, <strong>intelligente Automatisierung</strong> und <strong>praxisorientierte Lösungen</strong>, die Unternehmen helfen, schneller, präziser und wirtschaftlicher zu arbeiten.</p>
+            </div>
+            <a class="mt-6 inline-flex items-center gap-1 text-sm text-neutral-200 hover:underline underline-offset-4" href="./aboutme.md">Mehr über mich →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-neutral-800">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between text-sm">
+        <span>© 2025 Parametric AI Studio</span>
+        <a class="hover:underline underline-offset-4" href="./Agents.md">Agents.md</a>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
+      btn?.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('hidden');
+        if (!expanded) {
+          menu.querySelector('a')?.focus();
+        }
+      });
+
+      // No lightbox here anymore; figures link to project.html in new tab
+    </script>
+  </body>
+  </html>
+
+

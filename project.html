@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projekt – Detail</title>
+    <meta name="description" content="Projekt Detailansicht mit Zoom, Swipe und Metadaten." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-neutral-950 text-neutral-50 antialiased">
+    <header class="sticky top-0 z-40 bg-neutral-950/70 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60 border-b border-neutral-800">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+        <a href="./index.html" class="font-semibold tracking-tight hover:underline underline-offset-4">Parametric AI Studio</a>
+        <a href="./index.html#cases" class="text-sm text-neutral-300 hover:text-white hover:underline underline-offset-4">Zurück zum Showcase</a>
+      </div>
+    </header>
+
+    <main id="main" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+      <div id="projectContainer" class="grid lg:grid-cols-2 gap-8 items-start">
+        <section>
+          <div class="relative overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900">
+            <div id="viewport" class="touch-pan-y touch-pan-x select-none" style="height:60vh">
+              <img id="image" src="" alt="" class="max-w-none will-change-transform" style="transform-origin: 0 0;" />
+            </div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2 text-sm">
+            <button id="zoomOut" class="rounded-md border border-neutral-800 bg-neutral-900 px-3 py-1 hover:bg-neutral-800">-</button>
+            <button id="zoomReset" class="rounded-md border border-neutral-800 bg-neutral-900 px-3 py-1 hover:bg-neutral-800">Reset</button>
+            <button id="zoomIn" class="rounded-md border border-neutral-800 bg-neutral-900 px-3 py-1 hover:bg-neutral-800">+</button>
+            <button id="loadHires" class="hidden rounded-md border border-neutral-800 bg-neutral-900 px-3 py-1 hover:bg-neutral-800">Hi‑Res anzeigen</button>
+          </div>
+        </section>
+        <aside>
+          <header>
+            <h1 id="title" class="text-2xl sm:text-3xl font-semibold tracking-tight"></h1>
+            <p id="caption" class="mt-2 text-neutral-300"></p>
+          </header>
+          <dl id="meta" class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3"></dl>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="border-t border-neutral-800 mt-8">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between text-sm">
+        <span>© 2025 Parametric AI Studio</span>
+        <a class="hover:underline underline-offset-4" href="./Agents.md">Agents.md</a>
+      </div>
+    </footer>
+
+    <script>
+      // Read slug from query
+      const params = new URLSearchParams(location.search);
+      const slug = params.get('slug');
+
+      async function loadProject() {
+        try {
+          let projects = [];
+          // When opened via file://, fetch can be blocked (CORS). Fallback to inline JSON.
+          try {
+            const res = await fetch('./data/projects.json');
+            projects = await res.json();
+          } catch (err) {
+            console.warn('[project] fetch fallback used (likely file://):', err);
+            projects = [
+              {
+                slug: 'key-rack',
+                title: 'Key Rack',
+                image: './assets/key_rack/key_rack_be_cncmachined_hd_1920x1440.png',
+                fullImage: './assets/hires/key_rack_be_cncmachined_hq.jpg',
+                alt: 'Key Rack CNC-machined',
+                caption: 'Key Rack — CNC-gefräst',
+                meta: [
+                  { label: 'Material', value: 'Aluminium' },
+                  { label: 'Oberfläche', value: 'Powdercoated, NCS S5000-S30' },
+                  { label: 'Dimensions', value: '1000×500×120 mm' }
+                ]
+              }
+            ];
+          }
+          const project = projects.find(p => p.slug === slug) || projects[0];
+          if (!project) return;
+          document.title = project.title + ' – Projekt';
+          document.getElementById('title').textContent = project.title;
+          document.getElementById('caption').textContent = project.caption;
+          const img = document.getElementById('image');
+          img.src = project.image;
+          img.alt = project.alt || project.title;
+          // Expose a button to load hi-res on demand
+          const loadHiresBtn = document.getElementById('loadHires');
+          if (project.fullImage && loadHiresBtn) {
+            loadHiresBtn.classList.remove('hidden');
+            loadHiresBtn.addEventListener('click', () => {
+              loadHiresBtn.disabled = true;
+              loadHiresBtn.textContent = 'Lade Hi‑Res…';
+              const hires = new Image();
+              hires.decoding = 'async';
+              hires.src = project.fullImage;
+              hires.onload = () => {
+                const currentTransform = img.style.transform;
+                img.src = project.fullImage;
+                img.style.transform = currentTransform;
+                loadHiresBtn.textContent = 'Hi‑Res geladen';
+              };
+              hires.onerror = () => {
+                loadHiresBtn.textContent = 'Hi‑Res fehlgeschlagen';
+                loadHiresBtn.disabled = false;
+              };
+            }, { once: true });
+          }
+          const meta = document.getElementById('meta');
+          meta.innerHTML = '';
+          (project.meta || []).forEach(entry => {
+            const dt = document.createElement('dt');
+            dt.className = 'text-neutral-400 text-sm';
+            dt.textContent = entry.label;
+            const dd = document.createElement('dd');
+            dd.className = 'text-neutral-100';
+            dd.textContent = entry.value;
+            const wrap = document.createElement('div');
+            wrap.className = 'rounded-xl border border-neutral-800 p-4 bg-neutral-900';
+            wrap.appendChild(dt);
+            wrap.appendChild(dd);
+            meta.appendChild(wrap);
+          });
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      // Minimal zoom/pan with mouse + touch
+      function setupZoom() {
+        const viewport = document.getElementById('viewport');
+        const img = document.getElementById('image');
+        const zoomIn = document.getElementById('zoomIn');
+        const zoomOut = document.getElementById('zoomOut');
+        const zoomReset = document.getElementById('zoomReset');
+
+        let scale = 1;
+        let originX = 0; // image top-left origin in CSS pixels
+        let originY = 0;
+        let startX = 0;
+        let startY = 0;
+        let isPanning = false;
+        let lastDist = 0;
+        let didInitialFit = false;
+
+        function apply() {
+          img.style.transform = `translate(${originX}px, ${originY}px) scale(${scale})`;
+        }
+
+        function fitToViewport() {
+          if (!img.naturalWidth || !img.naturalHeight) return;
+          scale = Math.min(
+            viewport.clientWidth / img.naturalWidth,
+            viewport.clientHeight / img.naturalHeight
+          );
+          originX = (viewport.clientWidth - img.naturalWidth * scale) / 2;
+          originY = (viewport.clientHeight - img.naturalHeight * scale) / 2;
+          apply();
+        }
+
+        function setScale(next, centerX, centerY) {
+          const min = 0.5;
+          const max = 5;
+          const newScale = Math.min(max, Math.max(min, next));
+          // Zoom towards the pointer position
+          const rect = viewport.getBoundingClientRect();
+          const cx = centerX - rect.left - originX;
+          const cy = centerY - rect.top - originY;
+          const k = newScale / scale;
+          originX -= cx * (k - 1);
+          originY -= cy * (k - 1);
+          scale = newScale;
+          apply();
+        }
+
+        viewport.addEventListener('wheel', (e) => {
+          e.preventDefault();
+          const delta = e.deltaY > 0 ? -0.1 : 0.1;
+          setScale(scale + delta, e.clientX, e.clientY);
+        }, { passive: false });
+
+        viewport.addEventListener('mousedown', (e) => {
+          isPanning = true;
+          startX = e.clientX - originX;
+          startY = e.clientY - originY;
+        });
+        window.addEventListener('mousemove', (e) => {
+          if (!isPanning) return;
+          originX = e.clientX - startX;
+          originY = e.clientY - startY;
+          apply();
+        });
+        window.addEventListener('mouseup', () => { isPanning = false; });
+
+        // Touch: pan + pinch
+        viewport.addEventListener('touchstart', (e) => {
+          if (e.touches.length === 1) {
+            isPanning = true;
+            startX = e.touches[0].clientX - originX;
+            startY = e.touches[0].clientY - originY;
+          } else if (e.touches.length === 2) {
+            isPanning = false;
+            lastDist = Math.hypot(
+              e.touches[0].clientX - e.touches[1].clientX,
+              e.touches[0].clientY - e.touches[1].clientY
+            );
+          }
+        }, { passive: true });
+        viewport.addEventListener('touchmove', (e) => {
+          if (e.touches.length === 1 && isPanning) {
+            originX = e.touches[0].clientX - startX;
+            originY = e.touches[0].clientY - startY;
+            apply();
+          } else if (e.touches.length === 2) {
+            const dist = Math.hypot(
+              e.touches[0].clientX - e.touches[1].clientX,
+              e.touches[0].clientY - e.touches[1].clientY
+            );
+            const centerX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+            const centerY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+            const delta = dist - lastDist;
+            setScale(scale + delta * 0.003, centerX, centerY);
+            lastDist = dist;
+          }
+        }, { passive: false });
+        viewport.addEventListener('touchend', () => { isPanning = false; }, { passive: true });
+
+        zoomIn.addEventListener('click', () => setScale(scale + 0.2, viewport.clientWidth / 2, viewport.clientHeight / 2));
+        zoomOut.addEventListener('click', () => setScale(scale - 0.2, viewport.clientWidth / 2, viewport.clientHeight / 2));
+        zoomReset.addEventListener('click', () => { scale = 1; originX = 0; originY = 0; apply(); });
+
+        // Fit image initially only once (avoid resetting on hi-res swap)
+        img.addEventListener('load', () => {
+          if (didInitialFit) return;
+          didInitialFit = true;
+          fitToViewport();
+        });
+
+        // If image already loaded before listener attached
+        if (img.complete && img.naturalWidth > 0) {
+          didInitialFit = true;
+          fitToViewport();
+        }
+      }
+
+      loadProject().then(setupZoom);
+    </script>
+  </body>
+  </html>
+
+
