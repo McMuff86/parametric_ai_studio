@@ -27,8 +27,9 @@ Unternehmerisch ausgerichtet auf eine zukünftige Firma im Bereich Digital Fabri
 - Custom-Tools/Plugins für Rhino/Grasshopper
 - Beratung zu AI-gestützten Prozessen
 
-## Referenzen / Showcase (optional)
-- 3–6 Kacheln (Case Cards) mit Kurztext, KPIs, Tech-Stack
+## Referenzen / Showcase
+- Startseite mit gruppierten Showcases (CAD/CAM, BIM, Rhino, AI)
+- Rhino-Gruppe enthält interaktiven GLTF-Viewer (Model Switcher: Table / Wave shelf / Sonic)
 
 ## Kontakt / CTA
 **Lass uns gemeinsam deine digitale Fertigung aufbauen.**  
@@ -76,12 +77,14 @@ Unternehmerisch ausgerichtet auf eine zukünftige Firma im Bereich Digital Fabri
   - Landmark‑Regions, saubere H‑Hierarchie.  
   - `prefers-reduced-motion` respektieren.
 
-- **Technische Leitplanken (für die Umsetzung):**  
+-- **Technische Leitplanken (für die Umsetzung):**  
+  - Next.js App im Ordner `pas-next` (Tailwind v4, App Router).  
   - Tailwind Utility‑Klassen mit Dark‑Palette (`neutral-950/900/800/400/300/50`).  
   - Komponenten: <Header/>, <Hero/>, <ServicesGrid/>, <Cases/>, <Philosophy/>, <KPIs/>, <CTASection/>, <About/>, <Footer/>.  
+  - Rhino/3D: GLTF‑Viewer mit Three.js, Modelle unter `public/models/rhino/**`.  
   - Bildstrategie: responsive, lazy, Hero ggf. `priority`.  
-  - Detailseiten: Daten aus `data/projects.json` inkl. `fullImage` (Hi‑Res). Hi‑Res liegt unter `assets/hires/…` und wird auf Nutzeraktion (Button) nachgeladen & getauscht (Progressive Enhancement).  
-  - Content: `aboutme.md` speist die About‑Sektion; `Agents.md` bleibt Quelle für Strukturtexte.
+  - Detailseiten: Projekte aus `src/data/projects.ts`; Projektseiten bieten einen "Back to Showcase" Link.  
+  - Content: `pas-next/public/aboutme.md` speist die About‑Seite; diese `AGENTS.md` bleibt Quelle für Strukturtexte.
 
 ---
 

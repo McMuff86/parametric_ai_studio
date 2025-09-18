@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { GltfViewer } from "@/components/GltfViewer";
 import type { Project } from "@/data/projects";
 
 type GroupKey = "cadcam" | "bim" | "rhino" | "ai";
@@ -34,6 +35,7 @@ const GROUPS: { key: GroupKey; title: string; description: string }[] = [
 
 export function ShowcaseGroups({ projects }: { projects: Project[] }) {
   const [open, setOpen] = useState<Set<GroupKey>>(new Set());
+  const [rhinoModel, setRhinoModel] = useState<string>("/models/rhino/table/Tisch2_mesh.gltf");
 
   const toggle = (k: GroupKey) => {
     setOpen((prev) => {
@@ -63,11 +65,41 @@ export function ShowcaseGroups({ projects }: { projects: Project[] }) {
             <div className={`${isOpen ? "block" : "hidden"} px-4 sm:px-6 lg:px-8 pb-6`}>
               <p className="mt-2 text-neutral-300 text-sm max-w-3xl">{GROUPS.find(g => g.key === key)!.description}</p>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {items.length === 0 && (
+                {items.length === 0 && key !== "rhino" && (
                   <div className="rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={`/placeholders/${key}.svg`} alt={`${title} placeholder`} className="w-full aspect-[16/9] object-cover" />
                     <div className="p-3 text-sm text-neutral-300">{title} – Showcase coming soon</div>
+                  </div>
+                )}
+                {key === "rhino" && (
+                  <div className="rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden sm:col-span-2 lg:col-span-3">
+                    <div className="flex items-center gap-2 p-3 border-b border-neutral-800 bg-neutral-900/60">
+                      <span className="text-sm text-neutral-300">Model:</span>
+                      <button
+                        type="button"
+                        onClick={() => setRhinoModel("/models/rhino/table/Tisch2_mesh.gltf")}
+                        className={`text-sm px-3 py-1 rounded-md border ${rhinoModel.includes("table/") ? "bg-neutral-800 border-neutral-700 text-neutral-100" : "border-neutral-800 text-neutral-300 hover:bg-neutral-900"}`}
+                      >
+                        Table
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setRhinoModel("/models/rhino/wave_shelf/wave_shelf.gltf")}
+                        className={`text-sm px-3 py-1 rounded-md border ${rhinoModel.includes("wave_shelf/") ? "bg-neutral-800 border-neutral-700 text-neutral-100" : "border-neutral-800 text-neutral-300 hover:bg-neutral-900"}`}
+                      >
+                        Wave shelf
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setRhinoModel("/models/rhino/sonic/sonic.gltf")}
+                        className={`text-sm px-3 py-1 rounded-md border ${rhinoModel.includes("sonic/") ? "bg-neutral-800 border-neutral-700 text-neutral-100" : "border-neutral-800 text-neutral-300 hover:bg-neutral-900"}`}
+                      >
+                        Sonic
+                      </button>
+                    </div>
+                    <GltfViewer modelUrl={rhinoModel} height="56vh" />
+                    <div className="p-3 text-sm text-neutral-300">Rhino – GLTF Preview</div>
                   </div>
                 )}
                 {items.map((p) => (
