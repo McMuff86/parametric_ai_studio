@@ -5,7 +5,7 @@ export type Project = {
   caption?: string;
   images: { src: string; alt: string }[]; // paths under public
   meta: ProjectMeta[];
-  category: "cadcam" | "bim" | "rhino" | "ai";
+  category: "cadcam" | "bim" | "rhino" | "ai" | "design";
 };
 
 export const projects: Project[] = [

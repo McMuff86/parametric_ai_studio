@@ -3,8 +3,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { GltfViewer } from "@/components/GltfViewer";
 import type { Project } from "@/data/projects";
+import { DesignCard } from "@/components/DesignCard";
 
-type GroupKey = "cadcam" | "bim" | "rhino" | "ai";
+type GroupKey = "cadcam" | "bim" | "rhino" | "ai" | "design";
 
 const GROUPS: { key: GroupKey; title: string; description: string }[] = [
   {
@@ -24,6 +25,12 @@ const GROUPS: { key: GroupKey; title: string; description: string }[] = [
     title: "Rhino",
     description:
       "Rhino/Grasshopper‑Entwicklung, komplexe Geometrien und maßgeschneiderte Automatisierung.",
+  },
+  {
+    key: "design",
+    title: "Design/Architektur",
+    description:
+      "Renderings und Kurzanimationen zu Design- und Architekturideen.",
   },
   {
     key: "ai",
@@ -103,16 +110,28 @@ export function ShowcaseGroups({ projects }: { projects: Project[] }) {
                   </div>
                 )}
                 {items.map((p) => (
-                  <Link key={p.slug} href={`/projects/${p.slug}`} className="group block overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={(p.images[0] && p.images[0].src) || "/assets/Sideboard by Night.jpg"}
-                      alt={p.title}
-                      className="w-full aspect-[16/9] object-cover transition-transform duration-200 group-hover:scale-[1.03]"
-                      loading="lazy"
+                  key === "design" ? (
+                    <DesignCard
+                      key={p.slug}
+                      title={p.title}
+                      renderingSrc={(p.images[0] && p.images[0].src) || "/placeholders/design.svg"}
+                      renderingAlt={p.title}
+                      // Assets convention: /design/<slug>/<slug>.mp4 and /design/<slug>/description.md
+                      animationSrc={`/design/${p.slug}/${p.slug}.mp4`}
+                      descriptionPath={`/design/${p.slug}/description.md`}
                     />
-                    <div className="p-3 text-sm text-neutral-300">{p.caption || p.title}</div>
-                  </Link>
+                  ) : (
+                    <Link key={p.slug} href={`/projects/${p.slug}`} className="group block overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={(p.images[0] && p.images[0].src) || "/assets/Sideboard by Night.jpg"}
+                        alt={p.title}
+                        className="w-full aspect-[16/9] object-cover transition-transform duration-200 group-hover:scale-[1.03]"
+                        loading="lazy"
+                      />
+                      <div className="p-3 text-sm text-neutral-300">{p.caption || p.title}</div>
+                    </Link>
+                  )
                 ))}
               </div>
             </div>
