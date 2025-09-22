@@ -10,6 +10,45 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "modern-architecture-villa",
+    title: "Modern Architecture Villa",
+    caption: "Wireframe → Reality",
+    category: "design",
+    images: [
+      { src: "/design/modern-architecture-villa/modern-architecture-villa-wireframe-to-reality.png", alt: "Modern Architecture Villa" },
+    ],
+    meta: [],
+  },
+  {
+    slug: "luxury-mountain-villa",
+    title: "Luxury Mountain Villa",
+    caption: "Wireframe → Reality",
+    category: "design",
+    images: [
+      { src: "/design/luxury-mountain-villa/luxury-mountain-villa-wireframe-to-reality.png", alt: "Luxury Mountain Villa" },
+    ],
+    meta: [],
+  },
+  {
+    slug: "modern-villa-livingroom",
+    title: "Modern Villa Livingroom",
+    caption: "Blueprint → Reality",
+    category: "design",
+    images: [
+      { src: "/design/modern-villa-livingroom/modern-villa-livingroom-wireframe-to-reality.png", alt: "Modern Villa Livingroom" },
+    ],
+    meta: [],
+  },
+  {
+    slug: "scandinavian-wood-villa",
+    title: "Scandinavian Wood Villa",
+    caption: "Blueprint → Reality",
+    category: "design",
+    images: [
+      { src: "/design/scandinavian-wood-villa/scandinavian-wood-villa-blueprint-to-reality.png", alt: "Scandinavian Wood Villa" },
+    ],
+    meta: [],
+  },
     slug: "key-rack",
     title: "Key Rack",
     caption: "Key Rack — CNC-gefräst",
